@@ -1,0 +1,90 @@
+body, html{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    background-color: rgb(102, 123, 104);
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.contain{
+    box-sizing: border-box;
+    width: 80%;
+    height: 80%;
+    padding: 20px;
+    background-color: antiquewhite;
+    position: absolute;
+    display: block;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 10px;
+    box-shadow: 0 2px 0 2px ;
+    text-align: center;
+    
+}
+
+.game{
+    width: 440px;
+    height:440px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+
+.reset{
+    padding: 20px;
+    border:none;
+    background-color: rgb(23, 51, 21);
+    border-radius: 10px;
+    color:white;
+    cursor: pointer;
+}
+
+.reset:focus{
+    color:white;
+    background: green;
+}
+
+.item{
+    position: relative;
+    width:100px;
+    height:100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    background: rgb(63, 118, 74);
+    transition:0.5s;
+    transform: rotateY(180deg);
+    
+}
+
+.item.boxOpen
+{
+    transform: rotateY(0deg);
+}
+
+.item::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: white;
+    transition: 0.25s ease;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+
+    
+}
+
+.boxOpen:after ,
+.boxMatch:after
+{
+    transform: rotateY(180deg);
+}
